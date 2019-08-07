@@ -247,7 +247,7 @@ namespace PCPOS
 
         private string brojInventure()
         {
-            DataTable DSbr = classSQL.select("SELECT MAX(CAST(id_usklade) AS INT)) FROM usklada_robe", "inventura").Tables[0];
+            DataTable DSbr = classSQL.select("SELECT MAX(CAST(id_usklade AS INT)) FROM usklada_robe", "inventura").Tables[0];
             if (DSbr.Rows[0][0].ToString() != "")
             {
                 return (Convert.ToDouble(DSbr.Rows[0][0].ToString()) + 1).ToString();
