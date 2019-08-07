@@ -31,7 +31,7 @@ namespace PCPOS
             PaintRows(dgwArtikliUsklade);
             SetCB();
             numeric();
-            txtBrojInventure.Text = brojInventure();
+            txtBrojInventure.Text = brojUskladeRobe();
             txtSifra_robe.Enabled = false;
             ControlDisableEnable(1, 0, 0, 1, 0);
             if (broj_inventure_edit != null) { fillInventura(); }
@@ -245,18 +245,19 @@ namespace PCPOS
             cbSkladiste.DisplayMember = "skladiste";
             cbSkladiste.ValueMember = "id_skladiste";
         }
-
-        private string brojInventure()
+        private string brojUskladeRobe()
         {
-            DataTable DSbr = classSQL.select("SELECT MAX(CAST(id_usklade AS INT)) FROM usklada_robe", "inventura").Tables[0];
-            if (DSbr.Rows[0][0].ToString() != "")
+            /*
+            DataTable dsbr = classSQL.select("SELECT MAX(id_usklade) FROM usklada_robe","usklada_robe").Tables[0];
+            if (dsbr.Rows[0][0].ToString() != "")
             {
-                return (Convert.ToDouble(DSbr.Rows[0][0].ToString()) + 1).ToString();
+                return (Convert.ToDouble(dsbr.Rows[0][0].ToString()) + 1).ToString();
             }
             else
-            {
+            {*/
                 return "1";
-            }
+            //}
+            
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
@@ -556,7 +557,7 @@ namespace PCPOS
             DTizdatnica.Columns.Add("nova_kolicina");
             DataRow rowIzdatnice;
 
-            txtBrojInventure.Text = brojInventure();
+            txtBrojInventure.Text = brojUskladeRobe();
 
             DataTable DTsend = new DataTable();
             DTsend.Columns.Add("usklada_id");
@@ -694,7 +695,7 @@ namespace PCPOS
         {
             edit = false;
             deleteFields();
-            txtBrojInventure.Text = brojInventure();
+            txtBrojInventure.Text = brojUskladeRobe();
             EnableDisable(true);
             ControlDisableEnable(0, 1, 1, 0, 1);
         }
@@ -816,7 +817,7 @@ namespace PCPOS
                 deleteFields();
                 if (DT.Rows.Count == 0)
                 {
-                    if (brojInventure() == txtBrojInventure.Text.Trim())
+                    if (brojUskladeRobe() == txtBrojInventure.Text.Trim())
                     {
                         deleteFields();
                         edit = false;
