@@ -451,6 +451,22 @@ alter table izdatnica add column novo boolean default true;";
 
                 classSQL.select(sql, "karticaKupci_racuni");
             }
+            if (DTremote.Select("table_name='usklada_robe'").Length == 0)
+            {
+                sql= "CREATE TABLE usklada_robe(id_usklade integer NOT NULL,datum timestamp with time zone,godina character varying,izradio integer,primka_id integer,izdatnica_id integer,"+
+                     "napomena character varying,zakljuceno integer,obrisano integer,novo boolean,editirano boolean,CONSTRAINT PK_uskladaRobe PRIMARY KEY(id_usklade),"+
+                     "CONSTRAINT FK_uskladaRobe_Izradio FOREIGN KEY(izradio) REFERENCES zaposlenici(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION,"+
+                     "CONSTRAINT FK_uskladaRobe_izdatnica FOREIGN KEY(izdatnica_id) REFERENCES izdatnica(id_izdatnica) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION,"+
+                     "CONSTRAINT FK_uskladaRobe_primka FOREIGN KEY(primka_id) REFERENCES primka(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION)";
+                classSQL.select(sql, "UskladaRobe");
+            }
+            if (DTremote.Select("table_name='usklada_robe_stavke'").Length == 0)
+            {
+                sql = "CREATE TABLE usklada_robe_stavke(usklada_id integer,roba_id integer,usklada_idpk serial," +
+                      "nova_kolicina character varying(30),stara_kolicina character varying(30),CONSTRAINT PK_uskladeStavke PRIMARY KEY(usklada_idpk)," +
+                      "CONSTRAINT FK_uskladaRobeStavke_usklada FOREIGN KEY(usklada_id) REFERENCES usklada_robe(id_usklade) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION)";
+                classSQL.select(sql, "UskladaRobeStavke");
+            }
 
             if (DTremote.Select("table_name = 'napomene'").Length == 0)
             {
@@ -1098,34 +1114,6 @@ alter table partners add column hormonalni_nadomjestak character varying (500);"
                  "width int," +
                  "CONSTRAINT zid_pkey PRIMARY KEY (id )" +
                ")";
-                classSQL.insert(sql);
-            }
-
-            //Na_stol_naplaceno
-            if (DTremote.Select("table_name='na_stol_naplaceno'").Length == 0)
-            {
-                sql = $@"CREATE TABLE public.na_stol_naplaceno
-                        (
-                            id_stol integer,
-                            sifra character varying(25),
-                            broj_narudzbe character varying(7),
-                            kom numeric,
-                            id_poslovnica integer,
-                            id_skladiste character varying(100),
-                            mpc numeric,
-                            vpc numeric,
-                            porez numeric,
-                            porez_potrosnja numeric,
-                            br numeric,
-                            jelo character varying(50),
-                            skinuto integer,
-                            id_zaposlenik integer,
-                            dod integer,
-                            pol integer,
-                            id_adresa_dostave numeric,
-                            rabat numeric,
-                            id serial primary key
-                        )";
                 classSQL.insert(sql);
             }
 

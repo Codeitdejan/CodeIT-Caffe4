@@ -39,21 +39,6 @@
             this.lblBrojRac = new System.Windows.Forms.Label();
             this.lblnativGrupe = new System.Windows.Forms.Label();
             this.dgw = new System.Windows.Forms.DataGridView();
-            this.naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mpc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sifra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.skladiste = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porez = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rabat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vpc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porez_potrosnja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zakljucaj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.polapola = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_podgrupa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.CBstolovi = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -101,6 +86,21 @@
             this.lblKarticaKorisnik = new System.Windows.Forms.Label();
             this.lblPrijavljen = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mpc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sifra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.skladiste = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porez = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rabat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vpc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porez_potrosnja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zakljucaj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.polapola = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_podgrupa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -198,100 +198,6 @@
             this.dgw.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_CellEnter);
             this.dgw.SelectionChanged += new System.EventHandler(this.dgw_SelectionChanged);
             this.dgw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnPice_KeyDown);
-            // 
-            // naziv
-            // 
-            this.naziv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.naziv, "naziv");
-            this.naziv.Name = "naziv";
-            this.naziv.ReadOnly = true;
-            // 
-            // kolicina
-            // 
-            this.kolicina.FillWeight = 60F;
-            resources.ApplyResources(this.kolicina, "kolicina");
-            this.kolicina.Name = "kolicina";
-            this.kolicina.ReadOnly = true;
-            // 
-            // mpc
-            // 
-            this.mpc.FillWeight = 70F;
-            resources.ApplyResources(this.mpc, "mpc");
-            this.mpc.Name = "mpc";
-            this.mpc.ReadOnly = true;
-            // 
-            // sifra
-            // 
-            resources.ApplyResources(this.sifra, "sifra");
-            this.sifra.Name = "sifra";
-            this.sifra.ReadOnly = true;
-            // 
-            // skladiste
-            // 
-            resources.ApplyResources(this.skladiste, "skladiste");
-            this.skladiste.Name = "skladiste";
-            this.skladiste.ReadOnly = true;
-            // 
-            // porez
-            // 
-            resources.ApplyResources(this.porez, "porez");
-            this.porez.Name = "porez";
-            this.porez.ReadOnly = true;
-            // 
-            // rabat
-            // 
-            resources.ApplyResources(this.rabat, "rabat");
-            this.rabat.Name = "rabat";
-            this.rabat.ReadOnly = true;
-            // 
-            // vpc
-            // 
-            resources.ApplyResources(this.vpc, "vpc");
-            this.vpc.Name = "vpc";
-            this.vpc.ReadOnly = true;
-            // 
-            // porez_potrosnja
-            // 
-            resources.ApplyResources(this.porez_potrosnja, "porez_potrosnja");
-            this.porez_potrosnja.Name = "porez_potrosnja";
-            this.porez_potrosnja.ReadOnly = true;
-            // 
-            // zakljucaj
-            // 
-            resources.ApplyResources(this.zakljucaj, "zakljucaj");
-            this.zakljucaj.Name = "zakljucaj";
-            this.zakljucaj.ReadOnly = true;
-            // 
-            // jelo
-            // 
-            resources.ApplyResources(this.jelo, "jelo");
-            this.jelo.Name = "jelo";
-            this.jelo.ReadOnly = true;
-            // 
-            // nbc
-            // 
-            this.nbc.FillWeight = 70F;
-            resources.ApplyResources(this.nbc, "nbc");
-            this.nbc.Name = "nbc";
-            this.nbc.ReadOnly = true;
-            // 
-            // dod
-            // 
-            resources.ApplyResources(this.dod, "dod");
-            this.dod.Name = "dod";
-            this.dod.ReadOnly = true;
-            // 
-            // polapola
-            // 
-            resources.ApplyResources(this.polapola, "polapola");
-            this.polapola.Name = "polapola";
-            this.polapola.ReadOnly = true;
-            // 
-            // id_podgrupa
-            // 
-            resources.ApplyResources(this.id_podgrupa, "id_podgrupa");
-            this.id_podgrupa.Name = "id_podgrupa";
-            this.id_podgrupa.ReadOnly = true;
             // 
             // label1
             // 
@@ -818,6 +724,100 @@
             this.panel3.Controls.Add(this.lblKarticaUkupno);
             this.panel3.Controls.Add(this.lblKarticaKorisnik);
             this.panel3.Name = "panel3";
+            // 
+            // naziv
+            // 
+            this.naziv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.naziv, "naziv");
+            this.naziv.Name = "naziv";
+            this.naziv.ReadOnly = true;
+            // 
+            // kolicina
+            // 
+            this.kolicina.FillWeight = 60F;
+            resources.ApplyResources(this.kolicina, "kolicina");
+            this.kolicina.Name = "kolicina";
+            this.kolicina.ReadOnly = true;
+            // 
+            // mpc
+            // 
+            this.mpc.FillWeight = 70F;
+            resources.ApplyResources(this.mpc, "mpc");
+            this.mpc.Name = "mpc";
+            this.mpc.ReadOnly = true;
+            // 
+            // sifra
+            // 
+            resources.ApplyResources(this.sifra, "sifra");
+            this.sifra.Name = "sifra";
+            this.sifra.ReadOnly = true;
+            // 
+            // skladiste
+            // 
+            resources.ApplyResources(this.skladiste, "skladiste");
+            this.skladiste.Name = "skladiste";
+            this.skladiste.ReadOnly = true;
+            // 
+            // porez
+            // 
+            resources.ApplyResources(this.porez, "porez");
+            this.porez.Name = "porez";
+            this.porez.ReadOnly = true;
+            // 
+            // rabat
+            // 
+            resources.ApplyResources(this.rabat, "rabat");
+            this.rabat.Name = "rabat";
+            this.rabat.ReadOnly = true;
+            // 
+            // vpc
+            // 
+            resources.ApplyResources(this.vpc, "vpc");
+            this.vpc.Name = "vpc";
+            this.vpc.ReadOnly = true;
+            // 
+            // porez_potrosnja
+            // 
+            resources.ApplyResources(this.porez_potrosnja, "porez_potrosnja");
+            this.porez_potrosnja.Name = "porez_potrosnja";
+            this.porez_potrosnja.ReadOnly = true;
+            // 
+            // zakljucaj
+            // 
+            resources.ApplyResources(this.zakljucaj, "zakljucaj");
+            this.zakljucaj.Name = "zakljucaj";
+            this.zakljucaj.ReadOnly = true;
+            // 
+            // jelo
+            // 
+            resources.ApplyResources(this.jelo, "jelo");
+            this.jelo.Name = "jelo";
+            this.jelo.ReadOnly = true;
+            // 
+            // nbc
+            // 
+            this.nbc.FillWeight = 70F;
+            resources.ApplyResources(this.nbc, "nbc");
+            this.nbc.Name = "nbc";
+            this.nbc.ReadOnly = true;
+            // 
+            // dod
+            // 
+            resources.ApplyResources(this.dod, "dod");
+            this.dod.Name = "dod";
+            this.dod.ReadOnly = true;
+            // 
+            // polapola
+            // 
+            resources.ApplyResources(this.polapola, "polapola");
+            this.polapola.Name = "polapola";
+            this.polapola.ReadOnly = true;
+            // 
+            // id_podgrupa
+            // 
+            resources.ApplyResources(this.id_podgrupa, "id_podgrupa");
+            this.id_podgrupa.Name = "id_podgrupa";
+            this.id_podgrupa.ReadOnly = true;
             // 
             // frmCaffe
             // 
